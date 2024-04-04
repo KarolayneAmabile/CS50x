@@ -15,12 +15,12 @@ int main(void)
     int size = (getSize(number));
     if (!(size == 13 || size == 15 || size == 16)) 
     {
-        printf("INVALID\n");
+        printf("INVALID1\n");
         return 1;
     }
     if (isValidNum(number) == false)
     {
-        printf("INVALID\n");
+        printf("INVALID2\n");
         return 2;
     }
     getCard(number, size);
@@ -66,7 +66,7 @@ int get_Digits(long long number, bool isSecond)
 int multiplyByTwo(int digit)
 {
     digit *= 2;
-    if (digit > 10)
+    if (digit >= 10)
     {
         int n1 = 0, n2 = 0;
         n1 = digit / 10;
@@ -119,6 +119,6 @@ int getCard (long long int number, int size)
             return 0;
         }        
     }
-    printf("INVALID\n");
+    printf("INVALID3\n");
     return 0;
 }
