@@ -4,7 +4,7 @@
 int getSize(long long int number);
 int get_Digits(long long number, bool isSecond);
 int multiplyByTwo(int digit);
-bool isValidNum (long long int number);
+bool isValidNum(long long int number);
 int getCard (long long int number, int size);
 
 int main(void)
@@ -94,31 +94,31 @@ int getCard (long long int number, int size)
         number /= 10000000000000;
         if (number == 34 || number == 37)
         {
-            printf("AMEX\n");  
+            printf("AMEX\n");
+            return 0;  
         }
-    }
-    if (size == 16)
+    } 
+    if (size == 16) 
     {
         number /= 100000000000000;
         if (number == 51 || number == 52 || number == 53 || number == 54 || number == 55)
         {
-            printf("MASTERCARD\n"); 
+            printf("MASTERCARD\n");
+            return 0; 
         }
     }
-    if (size == 13 || size == 16)
+    if (size == 13 || size == 16) 
     {
         while (number > 10)
         {
             number /= 10;
-        }
+        } 
         if (number == 4)
         {
-        printf("VISA\n");
+            printf("VISA\n");
+            return 0;
         }        
     }
-    else
-    {
-        printf("INVALID3\n");
-        return 3;
-    }
+    printf("INVALID\n");
+    return 0;
 }
