@@ -4,7 +4,7 @@
 
 int getIndex (char letter);
 char substitution (int index, char key[26]);
-void makeCyphertext(char key[26], char text[200]);
+void makeCiphertext(char key[26], char text[200]);
 
 int main(int argc, char **argv)
 {
@@ -37,7 +37,7 @@ int main(int argc, char **argv)
     char text[300];
     printf("plaintext: ");
     gets(text);
-    makeCyphertext(key, text);
+    makeCiphertext(key, text);
     return 0;
 }
 
@@ -67,22 +67,22 @@ char substitution (int index, char key[26])
     return letter;
 }
 
-void makeCyphertext(char key[26], char text[200])
+void makeCiphertext(char key[26], char text[200])
 {
-    char cyphetext[200];
+    char ciphetext[200];
     for (int i = 0; i < strlen(text); i++)
     {
         if (isalpha(text[i]))
         {
             int index = getIndex(text[i]);
-            cyphetext[i] = substitution(index, key);
+            ciphetext[i] = substitution(index, key);
             if (islower(text[i]))
             {
-                cyphetext[i] = tolower(cyphetext[i]);
+                ciphetext[i] = tolower(ciphetext[i]);
             }
         } else {
-            cyphetext[i] = text[i];
+            ciphetext[i] = text[i];
         }
     }
-    printf("cyphertext: %s", cyphetext);
+    printf("cyphertext: %s", ciphetext);
 }
