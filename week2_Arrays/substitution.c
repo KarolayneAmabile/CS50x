@@ -16,7 +16,7 @@ int main(int argc, char **argv)
 
     int key_len = strlen(argv[1]) + 1;
     char key[key_len];
-    strncpy(key, argv[1], key_len - 1);
+    strncpy(key, argv[1], key_len - 1); 
     key[key_len - 1] = '\0'; 
 
     if (key_len != 27)
