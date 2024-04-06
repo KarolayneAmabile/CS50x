@@ -6,10 +6,37 @@ int getIndex (char letter);
 char substitution (int index, char key[26]);
 void makeCyphertext(char key[26], char text[200]);
 
-int main(void)
+int main(int argc, char **argv)
 {
-    char key[26] = "NQXPOMAFTRHLZGECYJIUWSKDVB";
-    char text[20] = "Ola a todos!";
+    if (argc != 2)
+    {
+        printf("./substitution key\n");
+        return 1;
+    }
+
+    int key_len = strlen(argv[1]) + 1;
+    char key[key_len];
+    strncpy(key, argv[1], key_len - 1);
+    key[key_len - 1] = '\0'; 
+
+    if (key_len != 27)
+    {
+        printf("Key must contain 26 characters.\n");
+        return 1;
+    }
+
+    for (int i = 0; i < 26; i++)
+    {
+        if (!isalpha(key[i]))
+        {
+            printf("./substitution key\n");
+            return 1;
+        }
+    }
+
+    char text[300];
+    printf("plaintext: ");
+    gets(text);
     makeCyphertext(key, text);
     return 0;
 }
