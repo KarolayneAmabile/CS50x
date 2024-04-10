@@ -86,7 +86,7 @@ bool vote(char *name)
 void print_winner(void)
 {
     int maximum = 0;
-    for (int i = 0; i < candidate_count; i++)
+    for (int i = 0; i < candidate_count; i++) 
     {
         if (candidates[i].votes >= maximum)
         {
